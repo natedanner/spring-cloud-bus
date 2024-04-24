@@ -34,12 +34,12 @@ public class RoutingClientDestinationFactory implements Destination.Factory {
 	public Destination getDestination(String originalDestination) {
 		ArrayList<String> entries = new ArrayList<>();
 		properties.getDefaultTags().forEach((key, s) -> {
-			String keyStr = (key.getWellKnownKey() != null) ? key.getWellKnownKey().name() : key.getKey();
+			String keyStr = key.getWellKnownKey() != null ? key.getWellKnownKey().name() : key.getKey();
 			entries.add(keyStr + "=" + s);
 		});
 		String defaultTags = StringUtils.collectionToDelimitedString(entries, ":");
 		return () -> {
-			String destination = (ObjectUtils.isEmpty(originalDestination)) ? defaultTags
+			String destination = ObjectUtils.isEmpty(originalDestination) ? defaultTags
 					: defaultTags + ":" + originalDestination;
 			if (ObjectUtils.isEmpty(destination)) {
 				throw new IllegalArgumentException("destination may not be empty");

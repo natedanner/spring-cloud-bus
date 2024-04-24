@@ -111,7 +111,7 @@ public class BusJacksonIntegrationTests {
 	@RemoteApplicationEventScan
 	protected static class Config {
 
-		final private Set<String> names = ConcurrentHashMap.newKeySet();
+		private final Set<String> names = ConcurrentHashMap.newKeySet();
 
 		@Autowired
 		private ServiceMatcher busServiceMatcher;

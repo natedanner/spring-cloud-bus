@@ -85,9 +85,9 @@ public class AckRemoteApplicationEvent extends RemoteApplicationEvent {
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + ((this.ackDestinationService == null) ? 0 : this.ackDestinationService.hashCode());
-		result = prime * result + ((this.ackId == null) ? 0 : this.ackId.hashCode());
-		result = prime * result + ((this.event == null) ? 0 : this.event.hashCode());
+		result = prime * result + (this.ackDestinationService == null ? 0 : this.ackDestinationService.hashCode());
+		result = prime * result + (this.ackId == null ? 0 : this.ackId.hashCode());
+		result = prime * result + (this.event == null ? 0 : this.event.hashCode());
 		return result;
 	}
 

@@ -30,7 +30,7 @@ import org.springframework.context.ApplicationListener;
  */
 public class EnvironmentChangeListener implements ApplicationListener<EnvironmentChangeRemoteApplicationEvent> {
 
-	private static Log log = LogFactory.getLog(EnvironmentChangeListener.class);
+	private static final Log log = LogFactory.getLog(EnvironmentChangeListener.class);
 
 	@Autowired
 	private EnvironmentManager env;

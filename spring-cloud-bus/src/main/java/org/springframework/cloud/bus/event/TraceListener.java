@@ -33,9 +33,9 @@ import org.springframework.context.event.EventListener;
  */
 public class TraceListener {
 
-	private static Log log = LogFactory.getLog(TraceListener.class);
+	private static final Log log = LogFactory.getLog(TraceListener.class);
 
-	private HttpExchangeRepository repository;
+	private final HttpExchangeRepository repository;
 
 	public TraceListener(HttpExchangeRepository repository) {
 		this.repository = repository;
@@ -54,7 +54,7 @@ public class TraceListener {
 	}
 
 	protected Map<String, Object> getSentTrace(SentApplicationEvent event) {
-		Map<String, Object> map = new LinkedHashMap<String, Object>();
+		Map<String, Object> map = new LinkedHashMap<>();
 		map.put("signal", "spring.cloud.bus.sent");
 		map.put("type", event.getType().getSimpleName());
 		map.put("id", event.getId());
@@ -67,7 +67,7 @@ public class TraceListener {
 	}
 
 	protected Map<String, Object> getReceivedTrace(AckRemoteApplicationEvent event) {
-		Map<String, Object> map = new LinkedHashMap<String, Object>();
+		Map<String, Object> map = new LinkedHashMap<>();
 		map.put("signal", "spring.cloud.bus.ack");
 		map.put("event", event.getEvent().getSimpleName());
 		map.put("id", event.getAckId());

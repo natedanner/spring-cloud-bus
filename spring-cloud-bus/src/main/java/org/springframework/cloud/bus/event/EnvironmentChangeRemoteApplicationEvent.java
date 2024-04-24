@@ -56,7 +56,7 @@ public class EnvironmentChangeRemoteApplicationEvent extends RemoteApplicationEv
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + ((this.values == null) ? 0 : this.values.hashCode());
+		result = prime * result + (this.values == null ? 0 : this.values.hashCode());
 		return result;
 	}
 

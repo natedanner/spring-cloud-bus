@@ -91,10 +91,10 @@ public class SentApplicationEvent extends ApplicationEvent {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((this.destinationService == null) ? 0 : this.destinationService.hashCode());
-		result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
-		result = prime * result + ((this.originService == null) ? 0 : this.originService.hashCode());
-		result = prime * result + ((this.type == null) ? 0 : this.type.hashCode());
+		result = prime * result + (this.destinationService == null ? 0 : this.destinationService.hashCode());
+		result = prime * result + (this.id == null ? 0 : this.id.hashCode());
+		result = prime * result + (this.originService == null ? 0 : this.originService.hashCode());
+		result = prime * result + (this.type == null ? 0 : this.type.hashCode());
 		return result;
 	}
 

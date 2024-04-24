@@ -157,7 +157,7 @@ public class BusProperties {
 		/**
 		 * Flag to switch on tracing of acks (default off).
 		 */
-		private boolean enabled = false;
+		private boolean enabled;
 
 		public boolean isEnabled() {
 			return this.enabled;

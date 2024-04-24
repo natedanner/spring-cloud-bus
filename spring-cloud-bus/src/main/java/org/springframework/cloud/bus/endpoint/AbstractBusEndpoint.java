@@ -25,9 +25,9 @@ import org.springframework.context.ApplicationEventPublisher;
  */
 public class AbstractBusEndpoint {
 
-	private ApplicationEventPublisher publisher;
+	private final ApplicationEventPublisher publisher;
 
-	private String appId;
+	private final String appId;
 
 	private final Destination.Factory destinationFactory;
 

@@ -31,11 +31,11 @@ import org.springframework.context.ApplicationListener;
  */
 public class RefreshListener implements ApplicationListener<RefreshRemoteApplicationEvent> {
 
-	private static Log log = LogFactory.getLog(RefreshListener.class);
+	private static final Log log = LogFactory.getLog(RefreshListener.class);
 
-	private ContextRefresher contextRefresher;
+	private final ContextRefresher contextRefresher;
 
-	private ServiceMatcher serviceMatcher;
+	private final ServiceMatcher serviceMatcher;
 
 	public RefreshListener(ContextRefresher contextRefresher, ServiceMatcher serviceMatcher) {
 		this.contextRefresher = contextRefresher;
